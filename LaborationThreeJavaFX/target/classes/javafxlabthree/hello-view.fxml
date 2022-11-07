@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxlabthree.controller.Controller">
+   <children>
+      <MenuBar>
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#undoLatestShape" text="Undo" />
+                  <MenuItem mnemonicParsing="false" onAction="#saveImage" onMenuValidation="#saveImage" text="Save" />
+                  <MenuItem mnemonicParsing="false" onAction="#closeProgram" text="Exit" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Shapes">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#pickedShape" text="Shapes">
+                     <graphic>
+                        <ChoiceBox fx:id="choiceBox" prefWidth="150.0" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Color ">
+                     <graphic>
+                        <ColorPicker fx:id="colorPicker" />
+                     </graphic></MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Size">
+                     <graphic>
+                        <Slider fx:id="brushSize" showTickLabels="true" showTickMarks="true" />
+                     </graphic></MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Switch Color">
+                     <graphic>
+                        <Button mnemonicParsing="false" onMouseReleased="#switchColor" text="Switch Color Button" />
+                     </graphic>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" text="Switch Size">
+                     <graphic>
+                        <Button mnemonicParsing="false" onMousePressed="#switchSize" text="Switch Size" />
+                     </graphic>
+                  </MenuItem>
+               </items>
+            </Menu>
+
+         </menus>
+      </MenuBar>
+      <Canvas fx:id="canvas" height="1080.0" layoutX="-7.0" layoutY="25.0" onMousePressed="#handleCanvasClick" width="3840.0" />
+   </children>
+</AnchorPane>
